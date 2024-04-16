@@ -1,0 +1,21 @@
+Sort Colors
+Input: nums = [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int n = nums[0];
+        for(int i =0; i< nums.size()-1;i++){
+            for(int j=i+1; j<nums.size();j++){
+                if(nums[i]>nums[j]){
+                    int temp ;
+                    temp = nums[i];
+                    nums[i]=nums[j];
+                    nums[j]=temp;
+                }
+            }
+        }
+    }
+};
