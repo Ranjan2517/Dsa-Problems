@@ -1,0 +1,27 @@
+169. Majority Element
+Example 1:
+
+Input: nums = [3,2,3]
+Output: 3
+
+class Solution {
+    public int majorityElement(int[] nums) {
+
+        int maxFrequency = 0;
+        int maxNum = -1; 
+
+    HashMap<Integer,Integer>map=new HashMap<>();
+     for (int num : nums) {
+           map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        for (int num : map.keySet()){   //keySet() - map is not iterable so we use 
+            if(map.get(num)>maxFrequency){
+                maxFrequency = map.get(num);
+                maxNum = num;
+            }
+        }
+        System.out.println(map);
+        System.out.println(maxNum);
+      return maxNum;
+    }
+}
